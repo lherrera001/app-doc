@@ -1,0 +1,11 @@
+
+site_name: 'An App with tech docs'
+
+nav:
+  - Home: index.md
+  - Subpage: sub-page.md
+  - 'App Code': code/code-sample.md
+  - Extensions: extensions.md
+
+plugins:
+  - techdocs-core
