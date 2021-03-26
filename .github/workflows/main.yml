@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      TECHDOCS_BUCKET_NAME: ${{ secrets.TECHDOCS_BUCKET_NAME }}
+      TECHDOCS_BUCKET_NAME: 'tech-docs-documents'
       ENTITY_NAMESPACE: 'default'
       ENTITY_KIND: 'Component'
       ENTITY_NAME: 'poc-app-doc'
