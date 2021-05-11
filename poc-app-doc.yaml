@@ -6,7 +6,7 @@ metadata:
   namespace: default
   description: An App with techdoc
   annotations:
-    backstage.io/techdocs-ref: 'url:https://github.com/lherrera001/poc-app-doc'
+    backstage.io/techdocs-ref: 'url:https://github.com/lherrera001/app-doc'
 spec:
   type: documentation
   lifecycle: experimental
