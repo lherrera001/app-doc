@@ -7,42 +7,46 @@ on:
     paths:
       - "docs/**"
       - "mkdocs.yml"
+      - ".github/workflows/main.yml"
 
 jobs:
   publish-techdocs-site:
     runs-on: ubuntu-latest
 
     env:
-      TECHDOCS_BUCKET_NAME: 'tech-docs-documents'
-      ENTITY_NAMESPACE: 'default'
-      ENTITY_KIND: 'Component'
-      ENTITY_NAME: 'poc-app-doc'
+      TECHDOCS_BUCKET_NAME: "tech-docs-documents"
+      ENTITY_NAMESPACE: "default"
+      ENTITY_KIND: "Component"
+      ENTITY_NAME: "app-doc"
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v2
       - uses: actions/setup-python@v2
         with:
-          python-version: '3.9' 
+          python-version: "3.9"
       - uses: google-github-actions/setup-gcloud@v0.2.1
         with:
-          version: '290.0.1'
+          version: "290.0.1"
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
+      - uses: cloudbees/plantuml-github-action@master
 
       - name: Install techdocs-cli
-        run: sudo npm install -g @techdocs/cli
+        run: sudo npm install -g @techdocs/cli@0.3.2
 
       - name: Install mkdocs and mkdocs plugins
-        run: python -m pip install mkdocs-techdocs-core==0.*
+        run: |
+          python -m pip install mkdocs-techdocs-core==0.* mkdocs-git-authors-plugin==0.*  mkdocs-exclude mkdocs-same-dir
 
       - name: Generate docs site
-        run: techdocs-cli generate --verbose
+        run: techdocs-cli generate --verbose --no-docker
 
       - name: Publish docs site
-        run:
-          techdocs-cli publish --publisher-type googleGcs --storage-name
+        run: techdocs-cli publish --publisher-type googleGcs --storage-name
           $TECHDOCS_BUCKET_NAME --entity
           $ENTITY_NAMESPACE/$ENTITY_KIND/$ENTITY_NAME

@@ -1,11 +1,30 @@
 
-site_name: 'An App with tech docs'
+site_name: 'App Docs'
+docs_dir: .
+site_dir: ../site
 
+theme:
+  name: material
+  custom_dir: docs/overrides
+extra_css: 
+    - docs/overrides/stylesheets/extra.css 
+  
 nav:
-  - Home: index.md
-  - Subpage: sub-page.md
-  - 'App Code': code/code-sample.md
-  - Extensions: extensions.md
+  - Home: onboarding/index.md
+  - Subpage: onboarding/sub-page.md
+  - App Code: onboarding/code/code-sample.md
+  - Extensions: onboarding/extensions.md
 
 plugins:
-  - techdocs-core
+  - exclude:
+      regex:
+        - 'node_modules/'
+        - 'plugins/.*?/node_modules/'
+        - 'packages/.*?/node_modules/'
+
+  - same-dir
+
+  - git-authors:
+      show_contribution: true
+      show_line_count: false
+      count_empty_lines: false

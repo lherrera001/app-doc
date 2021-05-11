@@ -1,7 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: poc-app-doc
+  name: app-doc
+  title: App Docs
   namespace: default
   description: An App with techdoc
   annotations:

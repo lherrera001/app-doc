@@ -1,0 +1,269 @@
+.md-container {
+  font-family: "Helvetica Neue Thin";
+  letter-spacing: 0.01rem;
+}
+
+p {
+  font-family: "Helvetica Neue Light";
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+a {
+  color: "inherit";
+  text-decoration: "none";
+  font-size: "1rem";
+  font-weight: 400;
+  font-family: "Helvetica Neue Light";
+  letter-spacing: 0.038rem;
+}
+
+.md-typeset h1 {
+  color: #4b286d;
+  font-size: 1.75rem;
+  font-family: "Helvetica Neue Light";
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.md-typeset h2 {
+  color: #2a2c2e;
+  font-family: "Helvetica Neue";
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.md-typeset h3 {
+  color: #2a2c2e;
+  font-family: "Helvetica Neue";
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  line-height: 28px;
+}
+
+.md-typeset h4 {
+  color: #2a2c2e;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  line-height: 28px;
+}
+
+.md-typeset ul,
+.md-typeset ol {
+  margin-bottom: 2.25rem;
+}
+.md-typeset ul li,
+.md-typeset ol li {
+  padding-left: 10px;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: " Helvetica Neue Light";
+}
+
+.md-typeset a {
+  color: #2b8000;
+  cursor: pointer;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+.md-typeset pre {
+  border: 1px solid #d8d8d8;
+  margin-top: 0;
+  border-radius: 3px;
+  counter-reset: linenumber;
+  margin-bottom: 2.25rem;
+  padding-bottom: 1.25rem;
+  background-color: #f7f7f8;
+}
+
+.md-typeset pre > code {
+  display: block;
+  padding: 0px 1.25rem;
+  font-family: Menlo, monospace;
+  counter-increment: linenumber;
+}
+
+.md-typeset pre code::before {
+  width: calc(3ch + 1.5rem);
+  height: 100%;
+  display: inline-block;
+  text-align: right;
+  font-family: "Menlo, monospace";
+  margin-left: auto;
+  padding-right: 1.5rem;
+  vertical-align: top;
+}
+
+.md-typeset pre > code > div {
+  width: calc(100% - 3ch - 1.5rem);
+  display: inline-block;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  font-size: 1rem;
+  margin-top: 1.25rem;
+}
+
+.md-nav {
+  margin-left: 10px;
+  font-size: 1rem;
+}
+
+h1.doc-title {
+  color: #4b286d;
+  font-size: 2.75rem;
+  font-weight: 200;
+  margin-bottom: 50px;
+  padding-top: 5px;
+}
+
+.previous__link,
+.next__link {
+  margin-top: 3rem;
+}
+
+label.md-nav__title {
+  font-size: 1.25rem;
+  font-family: "Helvetica Neue Medium";
+  font-weight: 300;
+  line-height: 3.25rem;
+  margin-bottom: 0;
+  letter-spacing: 0.03rem;
+}
+
+.md-nav__link[for="__toc"] {
+  display: none !important;
+}
+
+.md-nav__item .md-nav__link {
+  display: flex;
+  align-items: center;
+  font-family: "Helvetica Neue Light";
+  letter-spacing: 0.53px;
+  justify-content: left;
+  border-left: 4px solid #ede9f0;
+  font-weight: 400;
+  padding-top: 16px;
+  padding-left: 10px;
+  padding-right: 14px;
+  padding-bottom: 16px;
+  margin-top: 0px;
+}
+
+.md-nav__item .md-nav__link--active {
+  color: #4b286d;
+  font-family: "Helvetica Neue Medium";
+  font-weight: 500;
+  background-color: #ffffff;
+  border-left-color: #4b286d;
+}
+
+.md-nav__item .md-nav__link:hover {
+  color: #4b286d;
+  font-family: "Helvetica Neue Medium";
+  font-weight: 500;
+  background-color: #ede9f0;
+  border-left-color: #4b286d;
+}
+
+p.doc-description {
+  padding-bottom: 60px;
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+
+div.divider {
+  height: 32px;
+  padding-bottom: 60px;
+  background-image: radial-gradient(ellipse at top, #9696961a 0%, #0000 70%);
+}
+
+div.md-grid {
+  max-width: 100vw;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.md-footer__previous::before {
+  width: 5px;
+  content: "";
+  display: inline-block;
+  font-size: 14px;
+  transform: rotate(180deg);
+  transition: transform 300ms ease 0s;
+  font-family: TELUS Core Icons;
+  margin-right: 10px;
+}
+
+.md-footer__previous:hover::before {
+  transform: translateX(-0.25rem) rotate(180deg);
+}
+
+.md-footer__previous {
+  color: #4b286d;
+  width: 7.9375rem;
+  padding-top: 12px;
+  padding: 5px;
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  margin-bottom: 18px;
+  text-decoration: none;
+  float: left;
+}
+
+.md-footer__next::after {
+  width: 5px;
+  content: "";
+  display: inline-block;
+  font-size: 14px;
+  transition: transform 300ms ease 0s;
+  font-family: TELUS Core Icons;
+  margin-left: 10px;
+}
+
+.md-footer__next:hover:after {
+  transform: translateX(0.25rem);
+}
+
+.md-footer__next {
+  color: #4b286d;
+  width: 7.9375rem;
+  padding-top: 12px;
+  padding: 5px;
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  margin-bottom: 18px;
+  text-decoration: none;
+  text-align: end;
+  float: right;
+}
+
+div.previous__link {
+  float: left;
+}
+
+div.next__link {
+  float: right;
+}
+
+div.md-sidebar__scrollwrap {
+  overflow-y: none;
+}
+
+div.nav-item-container {
+  max-height: calc(100vh - 270px);
+  overflow-y: auto;
+}
