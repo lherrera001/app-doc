@@ -37,13 +37,13 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
       - uses: cloudbees/plantuml-github-action@master
-
+      
       - name: Install techdocs-cli
-        run: sudo npm install -g @techdocs/cli@0.3.2
+        run: sudo npm install -g @techdocs/cli@0.3.7
 
       - name: Install mkdocs and mkdocs plugins
         run: |
-          python -m pip install mkdocs-techdocs-core==0.* mkdocs-git-authors-plugin==0.*  mkdocs-exclude mkdocs-same-dir
+          python -m pip install mkdocs-material==7.1.5 mkdocs-git-authors-plugin==0.3.3  mkdocs-exclude==1.0.2 mkdocs-same-dir==0.1.0
 
       - name: Generate docs site
         run: techdocs-cli generate --verbose --no-docker

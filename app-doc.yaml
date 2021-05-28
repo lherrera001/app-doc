@@ -4,7 +4,7 @@ metadata:
   name: app-doc
   title: App Docs
   namespace: default
-  description: An App with techdoc
+  description: An example App with techdoc
   annotations:
     backstage.io/techdocs-ref: 'url:https://github.com/lherrera001/app-doc'
 spec:
